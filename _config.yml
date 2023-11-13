@@ -6,3 +6,13 @@ url: https://github.com/cryptogateway-project/cryptogateway-project
 
 aux_links:
   Template Repository: https://github.com/just-the-docs/just-the-docs-template
+
+navigation:
+  - text: Accueil
+    link: /
+  - text: Documentation
+    link: /docs/
+  - text: Mon Menu
+    link: /mon-menu/
+  - text: Page Personnalisée
+    link: /page-personnalisee/
