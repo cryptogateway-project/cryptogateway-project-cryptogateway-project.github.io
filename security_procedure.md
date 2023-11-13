@@ -58,7 +58,7 @@ Pour authentifier chaque requête, assurez-vous d'inclure la clé API générée
 ### Exemple de Requête finale
 
 ```http
-GET /api/exemple
+POST /api/exemple
 Authorization: Bearer VotreCleApiKey
 x-signature: VotreSIgnature
 ```
