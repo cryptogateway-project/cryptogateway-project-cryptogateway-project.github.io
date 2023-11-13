@@ -12,13 +12,13 @@ Avant d'envoyer des requêtes à notre API, assurez-vous de suivre les procédur
 Incluez votre clé API dans le header `Authorization` de toutes les requêtes vers notre API. Assurez-vous que la clé API est générée et gérée correctement depuis la section dédiée de votre compte.
 
 
-    1. Générer une Clé API
+1. Générer une Clé API
 
-        Commencez par générer une clé API depuis votre application web. Accédez à la section "API Paramètres"  et suivez les instructions pour créer une nouvelle clé.
+    Commencez par générer une clé API depuis votre application web. Accédez à la section "API Paramètres"  et suivez les instructions pour créer une nouvelle clé.
 
-    2. Utiliser la Clé API dans les Requêtes
+2. Utiliser la Clé API dans les Requêtes
 
-        Une fois que vous avez généré la clé API, vous pouvez l'utiliser pour authentifier vos requêtes API. Voici comment inclure la clé dans vos requêtes :
+    Une fois que vous avez généré la clé API, vous pouvez l'utiliser pour authentifier vos requêtes API. Voici comment inclure la clé dans vos requêtes :
 
 
 
@@ -33,7 +33,7 @@ Vous devez calculer la signature des données en utilisant l'algorithme SHA-256 
 **Exemple de requête :**
 
 ``` 
-        POST exemple.com/monendpoint
-        Authorization: Bearer VotreCleAPI
-        x-signature: SignatureDesDonnees
-        Content-Type: application/json
+POST {{base_url}}/monendpoint
+Authorization: Bearer VotreCleAPI
+x-signature: SignatureDesDonnees
+Content-Type: application/json
