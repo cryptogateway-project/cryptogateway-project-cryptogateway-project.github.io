@@ -58,9 +58,9 @@ Pour authentifier chaque requête, assurez-vous d'inclure la clé API générée
 ### Exemple de Requête finale
 
 ```http
-POST /api/exemple
-Authorization: Bearer VotreCleApiKey
-x-signature: VotreSIgnature
+    POST /api/exemple
+    Authorization: Bearer VotreCleApiKey
+    x-signature: VotreSIgnature
 ```
 
 ```php
