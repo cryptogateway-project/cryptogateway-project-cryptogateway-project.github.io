@@ -37,3 +37,4 @@ POST {{base_url}}/monendpoint
 Authorization: Bearer VotreCleAPI
 x-signature: SignatureDesDonnees
 Content-Type: application/json
+```
