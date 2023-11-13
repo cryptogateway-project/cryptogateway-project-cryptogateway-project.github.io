@@ -1,6 +1,6 @@
 ---
 layout: home
-title: security
+title: Procédure de Sécurité 
 ---
 
 # Procédure de Sécurité
