@@ -12,3 +12,5 @@ menu:
     url: /
   - name: À propos
     url: /about
+  - name: Services
+    url: /services
