@@ -1,50 +1,35 @@
-# Documentation tutoriel IZICHANGEPAY
-Nous sommes ravis de vous accueillir sur notre plateforme de portefeuille cryptomonnaie, conçue pour offrir une expérience sécurisée et efficace de gestion des actifs numériques. Que vous soyez un utilisateur débutant cherchant à explorer le monde des cryptomonnaies ou un investisseur chevronné, notre plateforme a été développée pour répondre à vos besoins.
+---
+layout: home
+title: Accueil
+---
 
-## Procédure de Sécurité
+This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
 
-Notre plateforme utilise les méthodes de sécurité suivantes :
+If [Jekyll] is installed on your computer, you can also build and preview the created site *locally*. This lets you test changes before committing them, and avoids waiting for GitHub Pages.[^1] And you will be able to deploy your local build to a different platform than GitHub Pages.
 
-### JSON Web Tokens (JWT)
+More specifically, the created site:
 
-Nous utilisons JWT pour l'authentification des utilisateurs. Chaque utilisateur authentifié reçoit un jeton JWT qui est inclus dans les en-têtes de chaque requête subséquente pour vérifier l'identité de l'utilisateur.
+- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem
+- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages
 
-### Clés API
+Other than that, you're free to customize sites that you create with this template, however you like. You can easily change the versions of `just-the-docs` and Jekyll it uses, as well as adding further plugins.
 
-Les requêtes entrantes vers notre API nécessitent l'utilisation de clés API. Chaque client autorisé reçoit une clé API unique qui doit être incluse dans le header `Authorization` des requêtes HTTP. Cela garantit une authentification sécurisée et contrôlée.
+[Browse our documentation][Just the Docs] to learn more about how to use this theme.
 
-### Empreinte HMAC (Hash-based Message Authentication Code)
+To get started with creating a site, simply:
 
-Pour garantir l'intégrité des données, nous utilisons une empreinte HMAC. Chaque requête inclut une empreinte HMAC générée à partir de son contenu. Le serveur peut ainsi vérifier que les données n'ont pas été altérées en transit.
+1. click "[use this template]" to create a GitHub repository
+2. go to Settings > Pages > Build and deployment > Source, and select GitHub Actions
 
-## Authentification des Requêtes
+If you want to maintain your docs in the `docs` directory of an existing project repo, see [Hosting your docs from an existing project repo](https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md#hosting-your-docs-from-an-existing-project-repo) in the template README.
 
-Avant d'envoyer des requêtes à notre API, assurez-vous de suivre les procédures d'authentification appropriées :
+----
 
-### Utilisation de la Clé API
+[^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
 
-Incluez votre clé API dans le header `Authorization` de toutes les requêtes vers notre API. Assurez-vous que la clé API est générée et gérée correctement depuis la section dédiée de votre compte.
-
-
-### 1. Générer une Clé API
-
-Commencez par générer une clé API depuis votre application web. Accédez à la section "API Paramètres"  et suivez les instructions pour créer une nouvelle clé.
-
-### 2. Utiliser la Clé API dans les Requêtes
-
-Une fois que vous avez généré la clé API, vous pouvez l'utiliser pour authentifier vos requêtes API. Voici comment inclure la clé dans vos requêtes :
-
-### Requête GET
-
-```http
-GET /api/exemple
-Authorization: Bearer VotreCleApiKey
-```
-
-
-
-
-### Empreinte HMAC
-
-Chaque requête doit inclure une empreinte HMAC dans le header `x-signature`. Assurez-vous de générer cette empreinte correctement à partir du contenu de votre requête pour garantir l'intégrité des données.
-
+[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
+[GitHub Pages]: https://docs.github.com/en/pages
+[README]: https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md
+[Jekyll]: https://jekyllrb.com
+[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
+[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate
