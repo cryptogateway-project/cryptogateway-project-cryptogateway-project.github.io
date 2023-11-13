@@ -3,52 +3,70 @@ layout: home
 title: Procédure de Sécurité 
 ---
 
-# Procédure de Sécurité
+# Procédure d'authentification
 
-Notre plateforme utilise les méthodes de sécurité suivantes :
-**JSON Web Tokens (JWT)**
+Notre API utilise un processus d'authentification sécurisé basé sur la génération de clés API et la vérification de l'intégrité des données à l'aide de HMAC avec l'algorithme SHA-256.
 
-Nous utilisons JWT pour l'authentification des utilisateurs. Chaque utilisateur authentifié reçoit un jeton JWT qui est inclus dans les en-têtes de chaque requête subséquente pour vérifier l'identité de l'utilisateur.
-
-**Clés API**
+### Authentification de l'API
 
 Les requêtes entrantes vers notre API nécessitent l'utilisation de clés API. Chaque client autorisé reçoit une clé API unique qui doit être incluse dans le header `Authorization` des requêtes HTTP. Cela garantit une authentification sécurisée et contrôlée.
 
-**Empreinte HMAC (Hash-based Message Authentication Code)**
+**Génération de la Clé API** 
 
-Pour garantir l'intégrité des données, nous utilisons une empreinte HMAC. Chaque requête inclut une empreinte HMAC générée à partir de son contenu. Le serveur peut ainsi vérifier que les données n'ont pas été altérées en transit.
+Pour accéder à notre API, vous devez générer une clé API depuis le tableau de bord de notre plateforme web. Suivez ces étapes :
 
+1. Connectez-vous à votre compte sur [notre tableau de bord](https://pay.izichange.com/login).
+2. Accédez à la section "Paramètres API".
+3. Cliquez sur "Information générales puis sur Ajouter au niveau de lasection Clé API".
+4. Copiez la clé générée en lieu sûr. Cette clé sera utilisée pour authentifier vos requêtes API.
 
+**Utilisation de la Clé API** 
 
-## Authentification des Requêtes
+Incluez votre clé API dans le header `Authorization` de toutes les requêtes vers notre API. Assurez-vous que la clé API est générée et gérée correctement depuis la section dédiée de votre compte.
 
-Avant d'envoyer des requêtes à notre API, assurez-vous de suivre les procédures d'authentification appropriées :
+### Authentification des Requêtes
 
-### Utilisation de la Clé API
+Chaque requête API doit être authentifiée pour garantir l'intégrité des données. Suivez ces étapes pour inclure l'authentification dans vos requêtes
 
-1. Générer une Clé API
+**Génération de la signature**
+La génération de la signature pour chaque requête API implique l'utilisation de l'algorithme HMAC avec la fonction de hachage SHA-256 et l'utilisation d'un secret qui n'est rien d'autres celui défini lors de la génération de la clé d'API
 
-    Commencez par générer une clé API depuis votre application web. Accédez à la section "API Paramètres"  et suivez les instructions pour créer une nouvelle clé.
+**Exemple en pseudocode :**
 
-2. Utiliser la Clé API dans les Requêtes
+```php
+    $data = [
+        "amount" => 0.001,
+        "coin" => "trx",
+        "address" => "TPEWaf6ZGJDrMbgKYoiM2Ze6BZydeRvDRQ",
+        "acceptToSupportFees" => true
+    ];
+    $dataToString="type=".trim($data['type'])."coin=".trim($data['coin'])."amount=".trim($data['amount'])."status".trim($data['status']);
 
-    Incluez votre clé API dans le header `Authorization` de toutes les requêtes vers notre API. Assurez-vous que la clé API est générée et gérée correctement depuis la section dédiée de votre compte.
+    $signature = hash_hmac('sha256',$dataToString, $secretKey, FALSE);
+```
 
+**Ajoute la signature à l'en-tête de la requête**
+Pour authentifier chaque requête, assurez-vous d'inclure la clé API générée dans l'en-tête `x-signature` de la requête HTTP.
 
+**Exemple en pseudocode :**
+```php
 
-### Empreinte HMAC
+    self::$HTTP_WITH_HEADER = Http::withHeaders([
+        'x-signature'=>$signature
+    ]);
+```
+### Exemple de Requête finale
 
-Chaque requête doit inclure une empreinte HMAC dans le header `x-signature`. Assurez-vous de générer cette empreinte correctement à partir du contenu de votre requête pour garantir l'intégrité des données.
-Assurez-vous de calculer la signature correctement à partir des données de la requête en utilisant l'algorithme SHA-256 avec le secret de signature approprié.
+```http
+GET /api/exemple
+Authorization: Bearer VotreCleApiKey
+x-signature: VotreSIgnature
+```
 
-Vous devez calculer la signature des données en utilisant l'algorithme SHA-256 avec le secret de signature de la clé API (la clé secrète définie lors de la génération de la clé API).
+```php
 
-
-**Exemple de requête :**
-
-``` 
-POST {{base_url}}/monendpoint
-Authorization: Bearer VotreCleAPI
-x-signature: SignatureDesDonnees
-Content-Type: application/json
+    self::$HTTP_WITH_HEADER = Http::withHeaders([
+        'Authorization' => env('WALLET_MANAGER_PUBLIC_KEY'),
+        'x-signature'=>$signature
+    ]);
 ```
