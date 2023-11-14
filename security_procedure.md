@@ -20,11 +20,11 @@ Pour accéder à notre API, vous devez générer une clé API depuis le dashboar
 3. Cliquez sur "Information générales puis sur Ajouter au niveau de la section Clé API".
 4. Copiez la clé générée en lieu sûr.
 
-![alt image du dashboard generation pour la génération de clé api izichangepay](/assets/images/_img_gen_api_key.png)
+![alt image du dashboard generation pour la génération de clé api izichangepay](/images/_img_gen_api_key.png)
 
-![alt image du dashboard generation pour la génération de clé api izichangepay](/assets/images/_img_gen_api_key_form1.png)
+![alt image du dashboard generation pour la génération de clé api izichangepay](/images/_img_gen_api_key_form1.png)
 
-![alt image du dashboard generation pour la génération de clé api izichangepay](/assets/images/_img_gen_api_key_form2.png)
+![alt image du dashboard generation pour la génération de clé api izichangepay](/images/_img_gen_api_key_form2.png)
 
 
 **Utilisation de la Clé API** 
