@@ -53,9 +53,12 @@ Pour authentifier chaque requête, assurez-vous d'inclure la clé API générée
 **Exemple en pseudocode :**
 ```php
 
-    self::$HTTP_WITH_HEADER = Http::withHeaders([
-        'x-signature'=>$signature
-    ]);
+    $signature = "votre_signature"; 
+    $options = [
+        'http' => [
+            'header' => "x-signature: $signature",
+        ],
+    ];
 ```
 ### Exemple de Requête finale
 
@@ -67,8 +70,14 @@ Pour authentifier chaque requête, assurez-vous d'inclure la clé API générée
 
 ```php
 
-    self::$HTTP_WITH_HEADER = Http::withHeaders([
-        'Authorization' => env('WALLET_MANAGER_PUBLIC_KEY'),
-        'x-signature'=>$signature
-    ]);
+    $signature = "votre_signature"; 
+    $apiKey= "votre_cle_api";
+    $options = [
+        'http' => [
+            'header' => [
+                "Authorization:Bearer $apiKey",
+                "x-signature: $signature",
+            ],
+        ],
+    ];
 ```
