@@ -18,11 +18,12 @@ Pour accéder à notre API, vous devez générer une clé API depuis le dashboar
 [^1]: Connectez-vous à votre [dashboard](https://pay.izichange.com/login).
 [^2]: Accédez à la section "Paramètres API" puis sur "Information générale".
 [^3]: Cliquez sur ajouter au niveau de la section Clé API".
-<img src="/cryptogateway-project/assets/images/key1.png" alt="Image du dashboard generation pour la génération de clé API Izichangepay" width="400" height="300">
+![image du dashboard generation pour la génération de clé api izichangepay](/cryptogateway-project/assets/images/key1.png?width=200&height=100)
 [^4]: Remplissez les champs conformement à vos besoins
-<img src="/cryptogateway-project/assets/images/key2.png" alt="Image du dashboard generation pour la génération de clé API Izichangepay" width="400" height="300">
+![image du dashboard generation pour la génération de clé api izichangepay](/cryptogateway-project/assets/images/key2.png?width=200&height=100) 
 [^5]: Copiez la clé générée en lieu sûr.
-<img src="/cryptogateway-project/assets/images/key4.png" alt="Image du dashboard generation pour la génération de clé API Izichangepay" width="400" height="300">
+![image du dashboard generation pour la génération de clé api izichangepay](/cryptogateway-project/assets/images/key4.png?width=200&height=100)
+
 **Utilisation de la Clé API** 
 
 Vous devez inclure la clé générer dans l'entête `x-api-key` de chacune de vos requêtes vers l'API  de toutes les requêtes vers notre API. Assurez-vous que la clé API est générée et gérée correctement depuis la section dédiée de votre compte.
