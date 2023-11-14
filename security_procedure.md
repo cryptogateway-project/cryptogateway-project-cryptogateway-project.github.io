@@ -33,16 +33,18 @@ La génération de la signature pour chaque requête API implique l'utilisation 
 
 **Exemple en pseudocode :**
 
-```php
-    $data = [
-        "amount" => 0.001,
-        "coin" => "trx",
-        "address" => "TPEWaf6ZGJDrMbgKYoiM2Ze6BZydeRvDRQ",
-        "acceptToSupportFees" => true
-    ];
-    $dataToString="type=".trim($data['type'])."coin=".trim($data['coin'])."amount=".trim($data['amount'])."status".trim($data['status']);
+```
+    {
+    "amount": 0.001,
+    "coin": "trx",
+    "address": "TPEWaf6ZGJDrMbgKYoiM2Ze6BZydeRvDRQ",
+    "acceptToSupportFees": true
+    }
 
-    $signature = hash_hmac('sha256',$dataToString, $secretKey, FALSE);
+    dataToString = "coin=" + data.coin + "amount=" + data.amount + "address=" + data.address + "acceptToSupportFees=" + data.acceptToSupportFees;
+    secret = "VotreSecretDeSignature";
+    $signature = SHA256(dataToString, secret);
+
 ```
 
 **Ajoute la signature à l'en-tête de la requête**
