@@ -3,26 +3,33 @@ layout: home
 title: Procédure de Sécurité 
 ---
 
-# Procédure d'authentification
+# Procédure de sécurité
 
 Notre API utilise un processus d'authentification sécurisé basé sur la génération de clés API et la vérification de l'intégrité des données à l'aide de HMAC avec l'algorithme SHA-256.
 
-### Authentification de l'API
+### Authentification des Requêtes
 
-Les requêtes entrantes vers notre API nécessitent l'utilisation de clés API. Chaque client autorisé reçoit une clé API unique qui doit être incluse dans le header `Authorization` des requêtes HTTP. Cela garantit une authentification sécurisée et contrôlée.
+Les requêtes entrantes vers l'API nécessitent l'utilisation de clés API. Chaque client doit générer une clé api unique qui sera incluses dans toutes les requêtes vers notre serveur.
 
 **Génération de la Clé API** 
 
-Pour accéder à notre API, vous devez générer une clé API depuis le tableau de bord de notre plateforme web. Suivez ces étapes :
+Pour accéder à notre API, vous devez générer une clé API depuis le dashboard de votre compte utilisateur,chaque clé API générée dispose de deux éléments clés pour garantir un accès sécurisé et personnalisé à nos services. Le premier élément est le secret, une chaîne confidentielle utilisée pour signer les requêtes émises par cette clé API. Cette signature, basée sur un algorithme HMAC, assure l'intégrité des données lors de leur transmission. Le deuxième élément est constitué des scopes associés à la clé, définissant les services spécifiques auxquels cette clé a accès. Les scopes agissent comme des permissions, limitant l'étendue des actions que la clé API peut entreprendre.voici comment faire :
 
 1. Connectez-vous à votre compte sur [notre tableau de bord](https://pay.izichange.com/login).
 2. Accédez à la section "Paramètres API".
-3. Cliquez sur "Information générales puis sur Ajouter au niveau de lasection Clé API".
-4. Copiez la clé générée en lieu sûr. Cette clé sera utilisée pour authentifier vos requêtes API.
+3. Cliquez sur "Information générales puis sur Ajouter au niveau de la section Clé API".
+4. Copiez la clé générée en lieu sûr.
+
+![alt image du dashboard generation pour la génération de clé api izichangepay](assets/images/_img_gen_api_key.png)
+
+![alt image du dashboard generation pour la génération de clé api izichangepay](assets/images/_img_gen_api_key_form1.png)
+
+![alt image du dashboard generation pour la génération de clé api izichangepay](assets/images/_img_gen_api_key_form2.png)
+
 
 **Utilisation de la Clé API** 
 
-Incluez votre clé API dans le header `Authorization` de toutes les requêtes vers notre API. Assurez-vous que la clé API est générée et gérée correctement depuis la section dédiée de votre compte.
+Vous devez inclure la clé générer dans l'entête `x-api-key` de chacune de vos requêtes vers l'API  de toutes les requêtes vers notre API. Assurez-vous que la clé API est générée et gérée correctement depuis la section dédiée de votre compte.
 
 ### Authentification des Requêtes
 
