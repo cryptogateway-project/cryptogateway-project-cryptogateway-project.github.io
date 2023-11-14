@@ -13,7 +13,7 @@ Les requêtes entrantes vers l'API nécessitent l'utilisation de clés API. Chaq
 
 **Génération de la Clé API** 
 
-Pour accéder à l'API, vous devez générer une clé depuis le dashboard de votre compte utilisateur,chaque clé générée dispose de deux éléments clés pour garantir un accès sécurisé et personnalisé à nos services. Le premier élément est le secret, une chaîne confidentielle utilisée pour signer les requêtes émises par cette clé. Cette signature, basée sur un algorithme HMAC, assure l'intégrité des données lors de leur transmission. Le deuxième élément est constitué des scopes associés à la clé, définissant les services spécifiques auxquels cette clé a accès. Les scopes agissent comme des permissions, limitant l'étendue des actions que la clé peut entreprendre, vous avez aussi la possiblité de définir une liste d'addresse ip à partir duquel seront les requetês qui seront transitées par cette clé devront transiter voici comment faire :
+Pour accéder à l'API, vous devez générer une clé depuis le dashboard de votre compte utilisateur. Chaque clé générée dispose de deux éléments principaux pour garantir un accès sécurisé et personnalisé à nos services. Le premier élément est le secret, une chaîne confidentielle utilisée pour signer les requêtes émises par la clé. La signature, basée sur un algorithme HMAC, assure l'intégrité des données lors de leur transmission. Le deuxième élément est constitué des accès associés à la clé, définissant les services spécifiques auxquels cette clé a accès. Les accès agissent comme des permissions, limitant les actions que la clé peut effectuées; Vous avez aussi la possiblité de définir une liste d'addresse ip à partir de laquelle seront envoyées les requetês vers l'API. Voici comment faire :
 
 1. Connectez-vous à votre [dashboard](https://pay.izichange.com/login).
 2. Accédez à la section "Paramètres API" puis sur "Information générale".
@@ -26,7 +26,7 @@ Pour accéder à l'API, vous devez générer une clé depuis le dashboard de vot
 
 **Utilisation de la Clé API** 
 
-Vous devez inclure la clé générer dans l'entête `x-api-key` de chacune de vos requêtes vers l'API  de toutes les requêtes vers notre API. Assurez-vous que la clé API est générée et gérée correctement depuis la section dédiée de votre compte.
+Vous devez inclure la clé générer dans l'entête `x-api-key` de chacune de vos requêtes vers l'API. Assurez-vous que la clé API est générée et gérée correctement depuis la section dédiée de votre compte.
 
 ``` http
 POST base_url/monendpoint
