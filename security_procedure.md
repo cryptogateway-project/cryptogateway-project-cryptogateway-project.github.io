@@ -20,7 +20,7 @@ Pour accéder à notre API, vous devez générer une clé API depuis le dashboar
 3. Cliquez sur ajouter au niveau de la section Clé API".
 
 ![image du dashboard generation pour la génération de clé api izichangepay](/cryptogateway-project/assets/images/key1.png?width=200&height=100)
-
+4. Définissez la clé
 4. Copiez la clé générée en lieu sûr.
 
 ![image du dashboard generation pour la génération de clé api izichangepay](/cryptogateway-project/assets/images/key4.png?width=200&height=100)
@@ -43,17 +43,22 @@ La génération de la signature pour chaque requête API implique l'utilisation 
 
 **Exemple en pseudocode :**
 
-```
-    {
-    "amount": 0.001,
-    "coin": "trx",
-    "address": "TPEWaf6ZGJDrMbgKYoiM2Ze6BZydeRvDRQ",
-    "acceptToSupportFees": true
-    }
 
-    dataToString = "coin=" + data.coin + "amount=" + data.amount + "address=" + data.address + "acceptToSupportFees=" + data.acceptToSupportFees;
-    secret = "VotreSecretDeSignature";
-    $signature = SHA256(dataToString, secret);
+```php
+
+$dataArray = [
+    "amount" => 0.001,
+    "coin" => "trx",
+    "address" => "TPEWaf6ZGJDrMbgKYoiM2Ze6BZydeRvDRQ",
+    "acceptToSupportFees" => true
+];
+
+
+$dataToString ="coin=".$dataArray['coin']."amount=".$dataArray['amount']."address=".$dataArray['address']."acceptToSupportFees="$dataArray['acceptToSupportFees'];
+
+$secretKey="votre_secret_defini_a_la_generation_de_la_cle";
+$signature = hash_hmac('sha256',$dataToString, $secretKey, FALSE);
+
 
 ```
 
@@ -68,3 +73,15 @@ Pour authentifier chaque requête, assurez-vous d'inclure la clé API générée
     x-signature: VotreSIgnature
 ```
 
+```php
+$signature = "votre_signature"; // Remplacez par votre valeur réelle de signature
+$apikey="votre clé api";
+$options = [
+    'http' => [
+        'header' => [
+            "x-api-key: $apikey",
+            "x-signature: $signature",
+        ],
+    ],
+];
+```
