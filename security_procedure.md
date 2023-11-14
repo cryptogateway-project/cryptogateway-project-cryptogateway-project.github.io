@@ -26,24 +26,25 @@ Pour accéder à l'API, vous devez générer une clé depuis le dashboard de vot
 
 **Utilisation de la Clé API** 
 
-Vous devez inclure la clé générer dans l'entête `x-api-key` de chacune de vos requêtes vers l'API. Assurez-vous que la clé API est générée et gérée correctement depuis la section dédiée de votre compte.
+Vous devez inclure la clé générer dans l'entête `x-api-key` de chacune de vos requêtes vers l'API. Assurez vous de garder la clé générée en un lieu sûr auquel vous les seuls à avoir accès. s'il s'avère qu'un utilisateur malveillant accède à cette clé, vous pourriez perdre tous vos fonds
 
 ``` http
-POST base_url/monendpoint
-x-api-key: VotreCleAPI
+POST <base_url>/monendpoint
+x-api-key: "<VotreCleAPI>"
 ```
 
 ### Vérifications de l'intégrité des requête
 
-Toutes les requêtes vers l'API doivent être signer afin de garantir l'intégrité des données. voici comment faire :
+Toutes les requêtes vers l'API doivent être signées afin de garantir l'intégrité des données transmis. Voici comment signer vos requetes :
 
 **Génération de la signature**
 La génération de la signature pour chaque requête API implique l'utilisation de l'algorithme HMAC avec la fonction de hachage SHA-256 et l'utilisation d'un secret qui n'est rien d'autres celui défini lors de la génération de la clé d'API
 
-**Exemple en pseudocode :**
+**Exemple en PHP :**
 
 
 ```php
+<?php
 
 $dataArray = [
     "amount" => 0.001,
@@ -83,4 +84,34 @@ $options = [
         ],
     ],
 ];
+```
+
+D'un autre coté vous devez vérifier toutes les requetes provenant de l'api vers vos services (IPN) afin de vous assurer qu'elles proviennent véritablement de nous. Le processus de génération présenté plus haut est le même utilisé pour générer la signature des données que nous vous transmettons. Cette signature est ajoutée aux données afin que vous vérifiez sa conformité.Il faudra donc reproduire ce même processus une fois les données reçues et comparez la signature que vous allez générer avec celle présente dans nos requêtes, Voici un exemple: 
+
+```php
+    $receviedData = [
+        'detail' => [
+            'txid' => '9a907970-27cd-41de-8e13-62569740e535',
+            'address' => 'tb1qqtlwcd0accgaggfsug84ngzwr5leq4dfvpggql',
+            'amount' => '1000',
+            'status' => 'PENDING',
+            'coin' => 'btc',
+            'type' => 'payin',
+        ],
+        'signature' => '300e0876809980406cc2e8c485de34a4f486472db4edc3d2a99c39874b782f75',
+    ];
+
+    $data=$receviedData['detail'];
+
+    $receviedDataTostring ="coin=".$data['coin']."amount=".$data['amount']."address=".$data['address']."acceptToSupportFees="$data['acceptToSupportFees'];
+
+    $secretKey="votre_secret_defini_a_la_generation_de_la_cle";
+    $expectedSignature = hash_hmac('sha256',$dataToString, $secretKey, FALSE);
+
+    if(hash_equals($expectedSignature, $receviedData['signature'])){
+        echo "signature valide";
+    }else{
+        echo "signature invalide";
+    }
+
 ```
