@@ -17,9 +17,7 @@ Pour récupérer une adresse de paiement, vous devez effectuer une requête HTTP
     x-api-key: <votre_cle_api>
     Accept: application/json
     x-signature: <la_signature_de_la_requete>
-    : 
     Content-Length: 20
-
     {
         "coin":"btc"
     }
