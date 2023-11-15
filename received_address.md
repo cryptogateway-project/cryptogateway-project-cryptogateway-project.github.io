@@ -10,6 +10,10 @@ Une adresse dans le contexte des actifs numériques est une chaîne de caractèr
 **Recuperation d'addresse**
 Pour récupérer une adresse de paiement, vous devez effectuer une requête HTTP POST à l'endpoint spécifié (/api/payements/address). Assurez-vous d'inclure les en-têtes nécessaires tels que `l'x-api-key` pour l'authentification API, l'Accept pour spécifier le format de réponse attendu, et `l'x-signature` pour garantir l'intégrité des données.
 
+***Note:***
+la donnée a signé  est construite en concaténant le nom du paramètre (dans cet exemple, "coin") avec sa valeur associée provenant de la requête.
+Exemple: "coin=btc",
+
 **Exemple de requête**
 ```http
     POST /api/payements/address HTTP/1.1
