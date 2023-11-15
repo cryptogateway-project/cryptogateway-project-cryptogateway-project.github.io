@@ -1,7 +1,7 @@
 ---
 layout: home
 title: Configuration d'ipn 
-weight: 3
+data-weight: 3
 ---
 
 # Configuration d'ipn

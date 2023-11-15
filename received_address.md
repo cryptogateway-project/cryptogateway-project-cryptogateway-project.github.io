@@ -1,7 +1,7 @@
 ---
 layout: home
 title: Génération d’addresse de reception
-weight: 4
+data-weight: 4
 ---
 
 # Génération d’addresse de reception
