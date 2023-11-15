@@ -35,7 +35,7 @@ x-api-key: "<VotreCleAPI>"
 
 ### Vérifications de l'intégrité des requête
 
-Toutes les requêtes vers l'API doivent être signées afin de garantir l'intégrité des données transmis. Voici comment signer vos requetes :Une adresse dans le contexte des actifs numériques est une chaîne de caractères unique qui identifie de manière spécifique un emplacement sur la blockchain. Elle sert de destination pour recevoir des fonds et est essentielle pour toutes les transactions. La génération d'adresses, que nous allons explorer ensemble, vous permettra de créer ces points d'interaction sécurisés, facilitant ainsi la réception et l'envoi sécurisés de vos actifs numériques sur notre plateforme. 
+Toutes les requêtes vers l'API doivent être signées afin de garantir l'intégrité des données transmis. Voici comment signer vos requetes :
 
 **Génération de la signature**
 La génération de la signature pour chaque requête API implique l'utilisation de l'algorithme HMAC avec la fonction de hachage SHA-256 et l'utilisation d'un secret qui n'est rien d'autres celui défini lors de la génération de la clé d'API
@@ -43,7 +43,7 @@ La génération de la signature pour chaque requête API implique l'utilisation 
 **Exemple en PHP :**
 
 
-```php
+``` php
 <?php
 
 $dataArray = [

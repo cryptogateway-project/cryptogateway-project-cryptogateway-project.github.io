@@ -10,28 +10,29 @@ Une adresse dans le contexte des actifs numériques est une chaîne de caractèr
 Pour récupérer une adresse de paiement, vous devez effectuer une requête HTTP POST à l'endpoint spécifié (/api/payements/address). Assurez-vous d'inclure les en-têtes nécessaires tels que `l'x-api-key` pour l'authentification API, l'Accept pour spécifier le format de réponse attendu, et `l'x-signature` pour garantir l'intégrité des données.
 
 **Exemple de requête**
-```http
-POST /api/payements/address HTTP/1.1
-Host: <base_url>
-Content-Type: application/json
-x-api-key: <votre_cle_api>
-Accept: application/json
-x-signature: <la_signature_de_la_requete>
-: 
-Content-Length: 20
 
-{
-    "coin":"btc"
-}
+```http
+    POST /api/payements/address HTTP/1.1
+    Host: <base_url>
+    Content-Type: application/json
+    x-api-key: <votre_cle_api>
+    Accept: application/json
+    x-signature: <la_signature_de_la_requete>
+    : 
+    Content-Length: 20
+
+    {
+        "coin":"btc"
+    }
 ```
 
-```bash
-curl --location '<base_url>/api/payements/address' \
---header 'Content-Type: application/json' \
---header 'x-api-key: <votre_cle_api>' \
---header 'Accept: application/json' \
---header 'x-signature: <la_signature_de_la_requete>' \
---data '{
-    "coin":"btc"
-}'
+```
+    curl --location '<base_url>/api/payements/address' \
+    --header 'Content-Type: application/json' \
+    --header 'x-api-key: <votre_cle_api>' \
+    --header 'Accept: application/json' \
+    --header 'x-signature: <la_signature_de_la_requete>' \
+    --data '{
+        "coin":"btc"
+    }'
 ```
