@@ -28,7 +28,7 @@ Pour accéder à l'API, vous devez générer une clé depuis le dashboard de vot
 
 Vous devez inclure la clé générer dans l'entête `x-api-key` de chacune de vos requêtes vers l'API. Assurez vous de garder la clé générée en un lieu sûr auquel vous les seuls à avoir accès. s'il s'avère qu'un utilisateur malveillant accède à cette clé, vous pourriez perdre tous vos fonds
 
-``` http
+```
 POST <base_url>/monendpoint
 x-api-key: "<VotreCleAPI>"
 ```
@@ -67,7 +67,7 @@ Pour authentifier chaque requête, assurez-vous d'inclure la clé générée dan
 
 **Exemple en pseudocode :**
 
-```http
+```
     POST /api/exemple
     x-api-key: VotreCleAPI
     x-signature: VotreSIgnature
