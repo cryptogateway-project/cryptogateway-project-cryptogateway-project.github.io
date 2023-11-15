@@ -18,11 +18,11 @@ Pour accéder à l'API, vous devez générer une clé depuis le dashboard de vot
 1. Connectez-vous à votre [dashboard](https://pay.izichange.com/login).
 2. Accédez à la section "Paramètres API" puis sur "Information générale".
 3. Cliquez sur ajouter au niveau de la section Clé API".
-![image du dashboard generation pour la génération de clé api izichangepay](/cryptogateway-project/assets/images/key1.png?width=200&height=100)
+![image du dashboard pour la génération de clé api izichangepay](/cryptogateway-project/assets/images/key1.png)
 4. Remplissez les champs conformement à vos besoins
-![image du dashboard generation pour la génération de clé api izichangepay](/cryptogateway-project/assets/images/key2.png?width=200&height=100) 
+![image du dashboard pour la génération de clé api izichangepay](/cryptogateway-project/assets/images/key2.png) 
 5. Copiez la clé générée en lieu sûr.
-![image du dashboard generation pour la génération de clé api izichangepay](/cryptogateway-project/assets/images/key4.png?width=200&height=100)
+![image du dashboard pour la génération de clé api izichangepay](/cryptogateway-project/assets/images/key4.png)
 
 **Utilisation de la Clé API** 
 
@@ -101,9 +101,9 @@ D'un autre coté vous devez vérifier toutes les requetes provenant de l'api ver
         'signature' => '300e0876809980406cc2e8c485de34a4f486472db4edc3d2a99c39874b782f75',
     ];
 
-    $data=$receviedData['detail'];
+    $detail=$receviedData['detail'];
 
-    $receviedDataTostring ="coin=".$data['coin']."amount=".$data['amount']."address=".$data['address']."acceptToSupportFees="$data['acceptToSupportFees'];
+    $receviedDataTostring ="coin=".$detail['coin']."amount=".$detail['amount']."address=".$detail['address']."acceptToSupportFees="$detail['acceptToSupportFees'];
 
     $secretKey="votre_secret_defini_a_la_generation_de_la_cle";
     $expectedSignature = hash_hmac('sha256',$dataToString, $secretKey, FALSE);
