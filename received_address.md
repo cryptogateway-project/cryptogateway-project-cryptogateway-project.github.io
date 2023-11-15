@@ -5,14 +5,13 @@ data-weight: 4
 ---
 
 # Génération d’addresse de reception
-Une adresse est une chaîne de caractères alphanumériques servant de référence pour recevoir et envoyer des fonds en toute sécurité. La génération d'adresses, que nous allons explorer ensemble, vous permettra de créer ces points d'interaction sécurisés, facilitant ainsi la réception et l'envoi sécurisés de vos actifs numériques sur notre plateforme.
+Une adresse est une chaîne de caractères alphanumériques servant de référence pour recevoir et envoyer des fonds en toute sécurité. La génération d'adresses, que nous allons explorer ensemble, vous permettra de créer des addresses sur lesquelles vos utilisateurs pourront envoyer des fonds.
 
-### Recuperation d'addresse**
-Pour récupérer une adresse de paiement, vous devez effectuer une requête HTTP POST à l'endpoint spécifié (/api/payements/address). Assurez-vous d'inclure les en-têtes nécessaires tels que `l'x-api-key` pour l'authentification API, l'Accept pour spécifier le format de réponse attendu, et `l'x-signature` pour garantir l'intégrité des données.
+### Recuperation d'addresse
+Pour récupérer une adresse de paiement, vous devez effectuer une requête HTTP POST à l'endpoint spécifié `/api/payements/address`. Assurez-vous d'inclure les en-têtes nécessaires tels que `l'x-api-key` pour l'authentification API, et `l'x-signature` pour garantir l'intégrité des données.
 
 ***Note:***
-Lors de la construction de la donnée à signer pour la génération de la signature HMAC, le processus implique la concaténation du nom du paramètre avec sa valeur associée provenant de la requête. Cela crée une structure spécifique où chaque paramètre est représenté sous la forme "nom=valeur". Par exemple, considérons le paramètre "coin" avec la valeur "btc".
-
+Lors de la construction de la donnée à signer pour la génération de la signature HMAC, le processus implique la concaténation du nom du paramètre avec sa valeur associée provenant de la requête. Cela crée une structure spécifique où chaque paramètre est représenté sous la forme "nom=valeur".
 **Exemple de requête**
 ```http
     POST /api/payements/address HTTP/1.1
