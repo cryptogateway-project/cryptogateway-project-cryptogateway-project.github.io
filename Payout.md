@@ -59,9 +59,7 @@ Lors de la construction de la donnée à signer pour la génération de la signa
 
 ```
     dataToString = "coin=" + data.coin + "amount=" + data.amount + "address=" + data.address + "acceptToSupportFees=" + data.acceptToSupportFees;
-
     secret = "VotreSecretDeSignature";
-
     $signature = SHA256(dataToString, secret);
 ```
 
@@ -75,9 +73,7 @@ Lors de la construction de la donnée à signer pour la génération de la signa
         "coin" => "trx"
         "acceptToSupportFees": true
     ];
-
     $dataToString ="coin=".$data['coin']."amount=".$data['amount']."address=".$data['address']."acceptToSupportFees="$data['acceptToSupportFees'];
-
     $secretKey="votre_secret_defini_a_la_generation_de_la_cle";
     $signature = hash_hmac('sha256',$dataToString, $secretKey, FALSE);
 
@@ -120,9 +116,7 @@ L'intégrité de nos réponses API est garantie par une signature qui associe la
     ];
 
     $data=$receviedData['data'];
-
     $dataToString ="id=".$data['id']."address=".$data['address']."amount=".$data['amount']."status="$data['status']."coin=".$data['coin'];
-
     $secretKey="votre_secret_defini_a_la_generation_de_la_cle";
     $expectedSignature = hash_hmac('sha256',$dataToString, $secretKey, FALSE);
 
