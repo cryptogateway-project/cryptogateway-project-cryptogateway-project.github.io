@@ -1,7 +1,7 @@
 ---
 layout: home
 title: Génération d’addresse de reception
-data-weight: 4
+weight: 4
 ---
 
 # Génération d’addresse de reception
@@ -12,6 +12,7 @@ Pour récupérer une adresse de paiement, vous devez effectuer une requête HTTP
 
 ***Note:***
 Lors de la construction de la donnée à signer pour la génération de la signature HMAC, le processus implique la concaténation du nom du paramètre avec sa valeur associée provenant de la requête. Cela crée une structure spécifique où chaque paramètre est représenté sous la forme "nom=valeur".
+
 **Exemple de requête**
 ```http
     POST /api/payements/address HTTP/1.1
@@ -70,7 +71,7 @@ L'intégrité de nos réponses API est garantie par une signature qui associe la
     $receviedDataTostring ="coin=".$data['coin'];
 
     $secretKey="votre_secret_defini_a_la_generation_de_la_cle";
-    $expectedSignature = hash_hmac('sha256',$dataToString, $secretKey, FALSE);
+    $expectedSignature = hash_hmac('sha256',$receviedDataTostring, $secretKey, FALSE);
 
     if(hash_equals($expectedSignature, $receviedData['signature'])){
         echo "signature valide";

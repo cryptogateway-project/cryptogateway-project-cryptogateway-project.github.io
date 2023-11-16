@@ -1,7 +1,7 @@
 ---
 layout: home
 title: Procédure de Sécurité 
-data-weight: 2
+weight: 2
 ---
 
 # Procédure de sécurité
@@ -94,10 +94,10 @@ D'un autre coté vous devez vérifier toutes les requetes provenant de l'api ver
         'detail' => [
             'txid' => '9a907970-27cd-41de-8e13-62569740e535',
             'address' => 'tb1qqtlwcd0accgaggfsug84ngzwr5leq4dfvpggql',
-            'amount' => '1000',
+            'amount' => '0.1',
             'status' => 'PENDING',
             'coin' => 'btc',
-            'type' => 'payin',
+    
         ],
         'signature' => '300e0876809980406cc2e8c485de34a4f486472db4edc3d2a99c39874b782f75',
     ];
