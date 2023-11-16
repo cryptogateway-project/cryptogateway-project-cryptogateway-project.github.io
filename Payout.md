@@ -17,8 +17,8 @@ Pour faire un paiement via l'Api, vous devez effectuer une requête HTTP POST à
 
 | Title | Code |
 | --- | --- |
-| Bitcoin | btc  |
-| Ethereum | eth  |
+| Bitcoin | btc |
+| Ethereum | eth |
 | Tron | trx |
 
 
@@ -27,7 +27,6 @@ Pour faire un paiement via l'Api, vous devez effectuer une requête HTTP POST à
 | coin | string | Le code de la cryptomonnaie |
 | address | string | Addresse de reception |
 | amount | decimal | Montant de la transaction |
-| acceptToSupportFees | boolean | Accepter supporter les frais de la transaction |
 
 **Méthode HTTP :** POST
 
@@ -47,8 +46,7 @@ Content-Length: 300
 {
   "amount": 100,
   "coin": "trx",
-  "address": "TPEWaf6ZGJDrMbgKYoiM2Ze6BZydeRvDRQ",
-  "acceptToSupportFees": true
+  "address": "TPEWaf6ZGJDrMbgKYoiM2Ze6BZydeRvDRQ"
 }
 ```
 
@@ -61,8 +59,7 @@ curl --location '<base_url>/api/payements/payout' \
 --data '{
   "amount": 100,
   "coin": "trx",
-  "address": "TPEWaf6ZGJDrMbgKYoiM2Ze6BZydeRvDRQ",
-  "acceptToSupportFees": true
+  "address": "TPEWaf6ZGJDrMbgKYoiM2Ze6BZydeRvDRQ"
 }'
 
 ```
@@ -71,7 +68,7 @@ curl --location '<base_url>/api/payements/payout' \
 Lors de la construction de la donnée à signer pour la génération de la signature HMAC, le processus implique la concaténation du nom des paramètres avec leur valeur associée provenant de la requête. Cela crée une structure spécifique où chaque paramètre est représenté sous la forme "nom=valeur".
 
 ```
-    dataToString = "coin=" + data.coin + "amount=" + data.amount + "address=" + data.address + "acceptToSupportFees=" + data.acceptToSupportFees;
+    dataToString = "coin=" + data.coin + "amount=" + data.amount + "address=" + data.address;
     secret = "VotreSecretDeSignature";
     $signature = SHA256(dataToString, secret);
 ```
@@ -84,9 +81,8 @@ Lors de la construction de la donnée à signer pour la génération de la signa
         "address" => "TPEWaf6ZGJDrMbgKYoiM2Ze6BZydeRvDRQ",
         "amount" => 100,
         "coin" => "trx"
-        "acceptToSupportFees": true
     ];
-    $dataToString ="coin=".$data['coin']."amount=".$data['amount']."address=".$data['address']."acceptToSupportFees="$data['acceptToSupportFees'];
+    $dataToString ="coin=".$data['coin']."amount=".$data['amount']."address=".$data['address'];
     $secretKey="votre_secret_defini_a_la_generation_de_la_cle";
     $signature = hash_hmac('sha256',$dataToString, $secretKey, FALSE);
 

@@ -50,12 +50,11 @@ La génération de la signature pour chaque requête API implique l'utilisation 
 $dataArray = [
     "amount" => 0.001,
     "coin" => "trx",
-    "address" => "TPEWaf6ZGJDrMbgKYoiM2Ze6BZydeRvDRQ",
-    "acceptToSupportFees" => true
+    "address" => "TPEWaf6ZGJDrMbgKYoiM2Ze6BZydeRvDRQ"
 ];
 
 
-$dataToString ="coin=".$dataArray['coin']."amount=".$dataArray['amount']."address=".$dataArray['address']."acceptToSupportFees="$dataArray['acceptToSupportFees'];
+$dataToString ="coin=".$dataArray['coin']."amount=".$dataArray['amount']."address=".$dataArray['address'];
 
 $secretKey="votre_secret_defini_a_la_generation_de_la_cle";
 $signature = hash_hmac('sha256',$dataToString, $secretKey, FALSE);
@@ -105,7 +104,7 @@ D'un autre coté vous devez vérifier toutes les requetes provenant de l'api ver
 
     $detail=$receviedData['detail'];
 
-    $receviedDataTostring ="coin=".$detail['coin']."amount=".$detail['amount']."address=".$detail['address']."acceptToSupportFees="$detail['acceptToSupportFees'];
+    $receviedDataTostring ="coin=".$detail['coin']."amount=".$detail['amount']."address=".$detail['address'];
 
     $secretKey="votre_secret_defini_a_la_generation_de_la_cle";
     $expectedSignature = hash_hmac('sha256',$dataToString, $secretKey, FALSE);
