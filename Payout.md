@@ -13,6 +13,14 @@ Pour faire un paiement via l'Api, vous devez effectuer une requête HTTP POST à
 
 **Description des paramètres**
 
+***Liste des cryptomonnaies supportées et leur code***
+| Title              | Code |
+|--------------------|------|
+| Bitcoin            | btc  |
+| Ethereum           | eth  |
+| Tron               | trx  |
+
+
 | variables | type | description |
 | --- | --- | --- |
 | coin | string | Le code de la cryptomonnaie |
