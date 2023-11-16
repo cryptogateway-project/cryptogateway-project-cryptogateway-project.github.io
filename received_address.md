@@ -57,6 +57,7 @@ L'intégrité de nos réponses API est garantie par une signature qui associe la
 **Exemple de code pour verifier la réponse**
 
 ```php
+    <?php
     $receviedData = [
         "status" => true,
         "message" => "created",

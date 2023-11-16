@@ -6,7 +6,7 @@ weight: 5
 
 # Payout
 
-Un payout correspond à l'action de transférer ou retirer de la crypto-monnaie depuis votre portefeuille numérique. Cela revient à effectuer un virement ou un retrait de fonds en ligne, vous permettant de déplacer vos avoirs pour effectuer des paiements, retirer des fonds ou réaliser d'autres transactions.
+Un payout correspond à l'action de transférer ou retirer de la crypto-monnaie depuis votre portefeuille numérique.
 
 ### Initiation d'un paiement
 Pour faire un paiement via l'Api, vous devez effectuer une requête HTTP POST à l'endpoint spécifié `/api/payements/payout`. Assurez-vous d'inclure les en-têtes nécessaires tels que `l'x-api-key` pour l'authentification API, et `l'x-signature` pour garantir l'intégrité des données.
@@ -15,16 +15,19 @@ Pour faire un paiement via l'Api, vous devez effectuer une requête HTTP POST à
 
 | variables | type | description |
 | --- | --- | --- |
-| coin | string | le code de la cryptomonnaie |
-| address | string | addresse de reception |
-| amount | decimal | montant de la transaction |
-| acceptToSupportFees | boolean | accepter supporter les frais de la transaction |
+| coin | string | Le code de la cryptomonnaie |
+| address | string | Addresse de reception |
+| amount | decimal | Montant de la transaction |
+| acceptToSupportFees | boolean | Accepter supporter les frais de la transaction |
 
 **Méthode HTTP :** POST
 
 **Exemple de requête :**
 
 ``` http
+
+http
+
 POST /api/payements/payout HTTP/1.1
 Host: <base_url>
 Content-Type: application/json
@@ -41,7 +44,7 @@ Content-Length: 300
 ```
 
 ``` bash
-    curl --location '<base_url>/api/payements/payout' \
+curl --location '<base_url>/api/payements/payout' \
 --header 'x-api-key: <votre_cle_api>' \
 --header 'x-signature: <la_signature_de_la_requete>' \
 --header 'Accept: application/json' \
@@ -55,6 +58,7 @@ Content-Length: 300
 
 ```
 **Comment signer les requetes**
+
 Lors de la construction de la donnée à signer pour la génération de la signature HMAC, le processus implique la concaténation du nom des paramètres avec leur valeur associée provenant de la requête. Cela crée une structure spécifique où chaque paramètre est représenté sous la forme "nom=valeur".
 
 ```
@@ -99,10 +103,13 @@ Lors de la construction de la donnée à signer pour la génération de la signa
 ```
 
 **Verification de la signature**
+
 L'intégrité de nos réponses API est garantie par une signature qui associe la clé de l'adresse générée avec l'adresse elle-même. Voici la structure typique de notre réponse signée :
 
 
 ```php
+
+    <?php 
     $receviedData = [
         "status" => true,
         "message" => "",
@@ -113,6 +120,7 @@ L'intégrité de nos réponses API est garantie par une signature qui associe la
             "status" => "PENDING",
             "coin" => "trx"
         ]
+        'signature' => '300e0876809980406cc2e8c485de34a4f486472db4edc3d2a99c39874b782f75',
     ];
 
     $data=$receviedData['data'];

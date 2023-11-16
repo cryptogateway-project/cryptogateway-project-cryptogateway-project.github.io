@@ -90,6 +90,7 @@ $options = [
 D'un autre coté vous devez vérifier toutes les requetes provenant de l'api vers vos services (IPN) afin de vous assurer qu'elles proviennent véritablement de nous. Le processus de génération présenté plus haut est le même utilisé pour générer la signature des données que nous vous transmettons. Cette signature est ajoutée aux données afin que vous vérifiez sa conformité.Il faudra donc reproduire ce même processus une fois les données reçues et comparez la signature que vous allez générer avec celle présente dans nos requêtes, Voici un exemple: 
 
 ```php
+    <?php
     $receviedData = [
         'detail' => [
             'txid' => '9a907970-27cd-41de-8e13-62569740e535',
