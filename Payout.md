@@ -109,7 +109,7 @@ Lors de la construction de la donnée à signer pour la génération de la signa
 
 **Verification de la signature**
 
-L'intégrité de nos réponses API est garantie par une signature qui associe la clé de l'adresse générée avec l'adresse elle-même. Voici la structure typique de notre réponse signée :
+L'intégrité de nos réponses API est garantie par une signature. Voici la structure typique de notre réponse signée :
 
 
 ```php
