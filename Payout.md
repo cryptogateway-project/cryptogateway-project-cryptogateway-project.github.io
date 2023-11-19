@@ -129,7 +129,7 @@ L'intégrité de nos réponses API est garantie par une signature. Voici la stru
     ];
 
     $data=$receviedData['data'];
-    $dataToString ="id=".$data['id']."address=".$data['address']."amount=".$data['amount']."status="$data['status']."coin=".$data['coin'];
+    $dataToString ="id=".$data['id']."address=".$data['address']."amount=".$data['amount']."coin=".$data['coin']; 
     $secretKey="votre_secret_defini_a_la_generation_de_la_cle";
     $expectedSignature = hash_hmac('sha256',$dataToString, $secretKey, FALSE);
 
