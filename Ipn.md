@@ -1,7 +1,7 @@
 ---
 layout: home
 title: Ipn
-weight: 6
+nav_order: 6
 ---
 
 # Ipn

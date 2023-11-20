@@ -1,7 +1,7 @@
 ---
 layout: home
 title: Procédure de Sécurité 
-weight: 2
+nav_order: 2
 ---
 
 # Procédure de sécurité

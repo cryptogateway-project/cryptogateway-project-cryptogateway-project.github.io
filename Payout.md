@@ -1,7 +1,7 @@
 ---
 layout: home
 title: Payout 
-weight: 5
+nav_order: 5
 ---
 
 # Payout
