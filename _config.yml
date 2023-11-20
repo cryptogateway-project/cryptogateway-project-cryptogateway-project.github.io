@@ -6,6 +6,8 @@ theme: just-the-docs
 
 url: https://github.com/cryptogateway-project/cryptogateway-project
 
+logo: "/assets/images/izi_logo.svg"
+
 favicon_ico: "/assets/images/favicon.ico"
 
 aux_links:
