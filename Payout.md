@@ -140,7 +140,3 @@ L'intégrité de nos réponses API est garantie par une signature. Voici la stru
     }
 
 ```
-
-> {: .new }
-> > Utilisez ce lien [POSTMAN]('https://www.postman.com') pour tester l'api en sandbox
-

@@ -80,6 +80,3 @@ Lors de la construction de la donnée à signer pour la génération de la signa
     }
 
 ```
-
-{: .highlight }
-Utilisez ce lien [POSTMAN]('https://www.postman.com') pour tester l'api en sandbox
