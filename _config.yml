@@ -10,6 +10,11 @@ logo: "/assets/images/izi_logo.svg"
 
 favicon_ico: "/assets/images/favicon.ico"
 
+callouts:
+  warning:
+    title: Warning
+    color: pink
+
 aux_links:
   Dashboard: https://pay.izichange.com/
   Postman: https://www.postman.com/tchinan/workspace/izichangepay/collection/30970679-072a1496-5b33-47b2-a1f8-ffe1ced74589
