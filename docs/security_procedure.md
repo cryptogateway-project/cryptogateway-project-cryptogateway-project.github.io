@@ -19,11 +19,11 @@ Pour accéder à l'API, vous devez générer une clé depuis le dashboard de vot
 1. Connectez-vous à votre [dashboard](https://pay.izichange.com/login).
 2. Accédez à la section "Paramètres API" puis sur "Information générale".
 3. Cliquez sur ajouter au niveau de la section Clé API".
-![image du dashboard pour la génération de clé api izichangepay](/assets/images/key1.png)
+![image1 du dashboard pour la génération de clé api izichangepay](/assets/images/key1.png)
 4. Remplissez les champs conformement à vos besoins
-![image du dashboard pour la génération de clé api izichangepay](/assets/images/key2.png) 
+![image2 du dashboard pour la génération de clé api izichangepay](/assets/images/key2.png) 
 5. Copiez la clé générée en lieu sûr.
-![image du dashboard pour la génération de clé api izichangepay](/assets/images/key4.png)
+![image4 du dashboard pour la génération de clé api izichangepay](/assets/images/key4.png)
 
 **Utilisation de la Clé API** 
 
