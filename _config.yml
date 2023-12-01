@@ -10,10 +10,10 @@ logo: "/assets/images/izi_logo.svg"
 
 favicon_ico: "/assets/images/favicon.ico"
 
-callouts:
-  highlight:
-    title: Warning
-    color: pink
+# callouts:
+#   highlight:
+#     title: Warning
+#     color: pink
 
 aux_links:
   Dashboard: https://pay.izichange.com/
