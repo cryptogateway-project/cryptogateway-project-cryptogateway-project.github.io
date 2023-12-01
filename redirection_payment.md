@@ -31,8 +31,8 @@ L'obtention d'un lien de payement se fait via l'Api, vous devez effectuer une re
 
 ``` bash
 curl --location --globoff '{{base_url}}/payements/generate_url' \
---header 'x-api-key: 6|skqZd0TvuSSfVluXVZd7wh3WN1pdAZFgImsLizKU289daa5d' \
---header 'x-signature: adae036371e5cb7ab6dc875b8febdca8561918b64d0a52a00c04b1cbd9b9dba6' \
+--header 'x-api-key: <votre_cle_api>' \
+--header 'x-signature: <la_signature_de_la_requete>' \
 --header 'Accept: application/json' \
 --header 'Content-Type: application/json' \
 --data '{
