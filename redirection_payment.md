@@ -49,3 +49,16 @@ curl --location --globoff '{{base_url}}/payements/generate_url' \
 Assurez-vous de calculer la signature correctement à partir des données  
 de la requête en utilisant l'algorithme SHA-256 avec le secret de  
 signature approprié.
+
+**Exemple de réponse :**
+
+```
+    {
+        "success": true,
+        "data": {
+            "operationId": "9ab86e67-6e36-4145-9f3c-bbdeb0b57448",
+            "redirection_url": "https://pay.izichange.com/detail_par/9ab86e67-6e36-4145-9f3c-bbdeb0b57448"
+        },
+        "message": "Operation Created"
+    }
+```
