@@ -29,7 +29,7 @@ L'obtention d'un lien de payement se fait via l'Api, vous devez effectuer une re
 
 **Exemple de requête :**
 
-``` http
+``` bash
 curl --location --globoff '{{base_url}}/payements/generate_url' \
 --header 'x-api-key: 6|skqZd0TvuSSfVluXVZd7wh3WN1pdAZFgImsLizKU289daa5d' \
 --header 'x-signature: adae036371e5cb7ab6dc875b8febdca8561918b64d0a52a00c04b1cbd9b9dba6' \
