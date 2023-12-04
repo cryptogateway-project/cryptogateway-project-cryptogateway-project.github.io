@@ -62,3 +62,15 @@ signature approprié.
         "message": "Operation Created"
     }
 ```
+
+### Pages d'initiation et de suivi d'un payement par redirection
+![image du dashboard pour la configuration de l'ipn](/assets/images/redirect_page_1.png)
+
+Pour recevoir l'adresse de payement, votre client est appelé à renseigner et soumettre les informations ci-dessus:
+nom, prénom, adresse mail et la cryptomonnaie dans laquelle il souhaite, une fois les informations reçue et validé, il sera redirigé vers la page suivante où il pourra faire le payement et suivre l'evolution temps réelle de ses transactions
+![image du dashboard pour la configuration de l'ipn](/assets/images/redirect_page_2.png)
+![image du dashboard pour la configuration de l'ipn](/assets/images/redirect_page_3.png)
+
+**Notification d'un payement par redirection**
+
+Lorsqu'une opération est reçu et validée, une Notification (IPN) de type *payment* est envoyée à votre serveur pour vous notifier (voir [IPN](./Ipn.html))

@@ -8,6 +8,15 @@ nav_order: 8
 
 Notre API envoie des Notifications Instantanées de Paiement (IPN) au serveur du client pour l'avertir instantanément lorqu'une nouvelle transaction a lieu ou lorqu'elle change d'état. Ces alertes en temps réel assurent une réactivité immédiate face à chaque modification de statut ou d'étape de paiement. Veuillez vous assurer d'avoir bien configurer votre IPN sur le [dashboard](https://pay.izichange.com/login) ou [cliquez sur ce lien](./ipn_config) pour procéder à la configuration de votre IPN. 
 
+***Les types de notifications que nous envoyons***
+
+| Transaction | type |
+| --- | --- |
+| Payin | payin |
+| Payout | payout |
+| Operation | payment |
+
+
 **Format des réponses**
 L'intégrité de nos réponses API est garantie par une signature. Voici la structure typique de notre réponse signée :
 
@@ -25,6 +34,8 @@ L'intégrité de nos réponses API est garantie par une signature. Voici la stru
     },
     "signature": "7d637a4f666f48be2cd9c118d07508314c42aa59e3354e583994e6a5aa49a773"
 }
+
+
 
 ```
 
@@ -46,7 +57,7 @@ L'intégrité de nos réponses API est garantie par une signature. Voici la stru
 
 ```
 
-### Comment valider une transaction de payout:
+### Comment valider une transaction:
 Lors de la construction de la donnée à signer pour la génération de la signature HMAC, le processus implique la concaténation du nom des paramètres avec leur valeur associée provenant de la requête. Cela crée une structure spécifique où chaque paramètre est représenté sous la forme "nom=valeur".
 
 ```php
