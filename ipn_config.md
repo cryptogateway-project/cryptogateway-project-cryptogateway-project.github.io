@@ -14,6 +14,6 @@ Deuxièmement, un secret, qui est nécessaire pour signer les données échangé
 1. Connectez-vous à votre [dashboard](https://pay.izichange.com/login).
 2. Accédez à la section "Paramètres API" puis sur "Information générale".
 3. Cliquez sur paramétrer au niveau de la section Paramétrage IPN".
-![image du dashboard pour la configuration de l'ipn](/assets/images/ipn1.png)
+![image du dashboard pour la configuration de l'ipn](/cryptogateway-project/assets/images/ipn1.png)
 4. Remplissez les champs et enregistrez les:
-![image du dashboard pour la configuration de l'ipn](/assets/images/ipn2.png)
+![image du dashboard pour la configuration de l'ipn](/cryptogateway-project/assets/images/ipn2.png)
