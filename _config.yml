@@ -10,10 +10,10 @@ logo: "/cryptogateway-project/assets/images/izi_logo.svg"
 
 favicon_ico: "/cryptogateway-project/assets/images/favicon.ico"
 
-# callouts:
-#   highlight:
-#     title: Warning
-#     color: pink
+callouts:
+  highlight:
+    title: Warning
+    color: highlight
 
 aux_links:
   Dashboard: https://pay.izichange.com/
