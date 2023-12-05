@@ -12,8 +12,7 @@ favicon_ico: "/cryptogateway-project/assets/images/favicon.ico"
 
 callouts:
   highlight:
-    title: Warning
-    color: highlight
+    color: highlight-300
 
 aux_links:
   Dashboard: https://pay.izichange.com/
