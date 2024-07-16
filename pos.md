@@ -4,4 +4,4 @@ title: Pos
 nav_order: 8
 ---
 
-# Payin
+# Pos
