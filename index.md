@@ -8,5 +8,5 @@ Nous sommes ravis de vous accueillir sur notre plateforme de portefeuille crypto
 
 {: .highlight }
 
-Effectuez vos test en utilisant la version [sandbox](./ipn_config)
+Effectuez vos test en utilisant la version [sandbox](https://sandbox-pay.izichange.com/)
 
