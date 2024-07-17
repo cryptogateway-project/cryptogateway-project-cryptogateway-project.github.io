@@ -12,3 +12,9 @@ Le système de point de vente (POS) de notre plateforme d'agrégation de paiemen
 ![image du dashboard pour le lien pos](/cryptogateway-project/assets/images/pos1.png)
 3. Choisir la cryptomonnaie et saisir le montant de la transaction
 ![image du dashboard pos](/cryptogateway-project/assets/images/pos2.png)
+
+***Page de paiement***
+![image du dashboard pos](/cryptogateway-project/assets/images/pos3.png)
+
+***historique des paiement sur le termainal***
+![image du dashboard pos](/cryptogateway-project/assets/images/pos4.png)
